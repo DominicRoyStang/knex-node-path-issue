@@ -7,6 +7,9 @@ EXPOSE 3000
 RUN mkdir -p /example
 WORKDIR /example
 
+# Source run-time environment variables
+ENV NODE_PATH=src
+
 # Install dependencies
 COPY package*.json ./
 RUN npm install --no-progress

@@ -9,6 +9,7 @@ services:
         build:
             context: ./
         environment:
+            - NODE_PATH=src
             - DATABASE_HOST=database
             - DATABASE_PORT=5432
             - DATABASE_NAME=sample-database

@@ -4,10 +4,10 @@
   "description": "An example knex app structure.",
   "main": "server/index.js",
   "scripts": {
-    "start": "./server/start.js",
+    "start": "src/server/start.js",
     "test": "ha ha, no.",
-    "db:migrate": "npx knex migrate:latest",
-    "db:seed": "npx knex seed:run"
+    "db:migrate": "npx knex migrate:latest --knexfile=src/knexfile.js",
+    "db:seed": "npx knex seed:run --knexfile=src/knexfile.js"
   },
   "author": "",
   "license": "MIT",
