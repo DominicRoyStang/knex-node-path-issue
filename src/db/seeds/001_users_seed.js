@@ -1,6 +1,9 @@
 'use strict'
 
 const { User } = require('../../server/models')
+const printhelloworld = require('examplefile');
+
+printhelloworld();
 
 exports.seed = knex => knex(User.tableName).del()
   .then(() => [
