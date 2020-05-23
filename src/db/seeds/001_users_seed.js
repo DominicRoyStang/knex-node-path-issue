@@ -1,7 +1,7 @@
 'use strict'
 
 const { User } = require('../../server/models')
-const printhelloworld = require('examplefile');
+const printhelloworld = require('examplefile'); // THIS DOES NOT WORK WITH `knex` COMMANDS
 
 printhelloworld();
 

@@ -5,6 +5,8 @@
 const PORT = process.env.PORT || 3000
 
 const app = require('../server')
+
+// THIS WORKS WHEN RUNNING WITH REGULAR NODEJS
 const printhelloworld = require('examplefile');
 
 printhelloworld();
