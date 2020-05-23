@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+
+    example:
+        image: example
+        depends_on:
+            - database
+        build:
+            context: ./
+        environment:
+            - DATABASE_HOST=database
+            - DATABASE_PORT=5432
+            - DATABASE_NAME=sample-database
+            - DATABASE_USER=sample-database-user
+            - DATABASE_PASSWORD=sample-database-password
+        ports:
+            - 3000:3000
+        volumes:
+            - ./:/example
+            - example-node-modules:/example/node_modules
+
+    database:
+        image: postgres:12.2
+        environment:
+            POSTGRES_DB: sample-database
+            POSTGRES_USER: sample-database-user
+            POSTGRES_PASSWORD: sample-database-password
+        ports:
+            - 5432:5432
+        volumes:
+            - database-data:/var/lib/postgresql/data
+
+volumes:
+    example-node-modules:
+    database-data:
